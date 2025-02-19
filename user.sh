@@ -6,7 +6,13 @@ dnf module enable nodejs:20 -y
 dnf install nodejs -y
 cp user.service /etc/systemd/system/user.service
 useradd roboshop
-artifact_download
+
+rm -rf /app
+mkdir /app
+curl -o /tmp/$component.zip https://roboshop-artifacts.s3.amazonaws.com/$component-v3.zip
+rm -rf /app
+cd /app
+unzip /tmp/$component.zip
 
 cd /app
 npm install

@@ -9,6 +9,7 @@ cp mongo.repo /etc/yum.repos.d/mongo.repo
 
 useradd roboshop
 artifact_download
+
 cd /app
 npm install
 
