@@ -7,8 +7,7 @@ dnf install nodejs -y
 cp user.service /etc/systemd/system/user.service
 useradd roboshop
 artifact_download
-cd /app
-unzip /tmp/user.zip
+
 cd /app
 npm install
 
