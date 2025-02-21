@@ -1,7 +1,9 @@
 
 print_head() {
-  echo -e "\e[33m$*\e[0m"
+  echo -e "\e[33m;5m$*\e[25m;0m"
+# echo -e "\e[5m$*\e[25m"
   echo "*********************" &>> $log_file
+  echo "*********************"
 }
 
 log_file=/tmp/roboshop.log
