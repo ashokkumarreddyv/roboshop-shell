@@ -1,6 +1,6 @@
 
 print_head() {
-  echo -e "\e[33;5m$*\e[25;0m"
+  echo -e "\e[32;5m$*\e[25;0m"
 # echo -e "\e[5m$*\e[25m"
 
   echo "*********************"
@@ -11,6 +11,7 @@ log_file=/tmp/roboshop.log/out
 
 print_head disable nginx
 dnf module disable nginx -y
+print_head enable nginx
 dnf module enable nginx:1.24 -y &>> $log_file
 print_head install nginx
 dnf install nginx -y &>> $log_file
@@ -22,7 +23,8 @@ curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v
 cd /usr/share/nginx/html
 unzip /tmp/frontend.zip &>> $log_file
 
-print_head menable nginx
+print_head enable nginx
 systemctl enable nginx &>> $log_file
+print_head start nginx
 systemctl start nginx &>> $log_file
 systemctl restart nginx &>> $log_file
