@@ -26,5 +26,5 @@ unzip /tmp/frontend.zip &>> $log_file
 print_head enable nginx
 systemctl enable nginx &>> $log_file
 print_head start nginx
-systemctl start nginx &>> $log_file
+systemctl start nginx &>>
 systemctl restart nginx &>> $log_file
