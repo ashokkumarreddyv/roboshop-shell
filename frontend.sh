@@ -2,11 +2,11 @@
 print_head() {
   echo -e "\e[33;5m$*\e[25;0m"
 # echo -e "\e[5m$*\e[25m"
-  echo "*********************" &>> $log_file
+
   echo "*********************"
 }
 
-log_file=/tmp/roboshop.log
+log_file=/tmp/roboshop.log/out
 
 
 print_head disable nginx
