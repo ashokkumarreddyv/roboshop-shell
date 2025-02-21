@@ -10,7 +10,7 @@ log_file=/tmp/roboshop.log
 
 
 print_head disable nginx
-dnf module disable nginx -y &>> $log_file
+dnf module disable nginx -y
 dnf module enable nginx:1.24 -y &>> $log_file
 print_head install nginx
 dnf install nginx -y &>> $log_file
