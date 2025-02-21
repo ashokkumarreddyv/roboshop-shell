@@ -1,7 +1,11 @@
-echo -e "\e[35mdisable nginx\e[0m"
+
+print_head() {
+  echo -e "\e[35m$*\e[0m"
+
+print_head disable nginx
 dnf module disable nginx -y
 dnf module enable nginx:1.24 -y
-echo -e "\e[37install nginx\e[0m"
+print_head install nginx
 dnf install nginx -y
 
 cp nginx.conf /etc/nginx/nginx.conf
@@ -11,7 +15,8 @@ curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v
 cd /usr/share/nginx/html
 unzip /tmp/frontend.zip
 
-echo -e "\e[36menable nginx\e[0m"
+print_head menable nginx
 systemctl enable nginx
 systemctl start nginx
 systemctl restart nginx
+}
