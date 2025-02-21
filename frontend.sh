@@ -12,12 +12,12 @@ dnf module enable nginx:1.24 -y >>/$log_file
 print_head install nginx >>/$log_file
 dnf install nginx -y >>/$log_file
 
-cp nginx.conf /etc/nginx/nginx.conf >>/$log_file
+cp nginx.conf /etc/nginx/nginx.conf >>/$log_file >>/$log_file
 
-rm -rf /usr/share/nginx/html/*
-curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
-cd /usr/share/nginx/html
-unzip /tmp/frontend.zip
+rm -rf /usr/share/nginx/html/* >>/$log_file
+curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip >>/$log_file
+cd /usr/share/nginx/html >>/$log_file
+unzip /tmp/frontend.zip >>/$log_file
 
 print_head menable nginx >>/$log_file
 systemctl enable nginx >>/$log_file
