@@ -1,6 +1,6 @@
 
 print_head() {
-  echo -e "\e[38m$*\e[0m"
+  echo -e "\e[33m$*\e[0m"
   echo "*********************" &>> $log_file
 }
 
