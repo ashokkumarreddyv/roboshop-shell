@@ -1,6 +1,6 @@
 
 print_head() {
-  echo -e "\e[33m;5m$*\e[25m;0m"
+  echo -e "\e[33;5m$*\e[25;0m"
 # echo -e "\e[5m$*\e[25m"
   echo "*********************" &>> $log_file
   echo "*********************"
