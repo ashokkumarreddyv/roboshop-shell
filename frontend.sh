@@ -6,25 +6,25 @@ print_head() {
   echo "*********************"
 }
 
-log_file=/tmp/roboshop.log/out
+
 
 
 print_head disable nginx
 dnf module disable nginx -y
 print_head enable nginx
-dnf module enable nginx:1.24 -y &>> $log_file
+dnf module enable nginx:1.24 -y
 print_head install nginx
-dnf install nginx -y &>> $log_file
+dnf install nginx -y
 
 cp nginx.conf /etc/nginx/nginx.conf
 
 rm -rf /usr/share/nginx/html/*
-curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip &>> $log_file
+curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
 cd /usr/share/nginx/html
-unzip /tmp/frontend.zip &>> $log_file
+unzip /tmp/frontend.zip
 
 print_head enable nginx
-systemctl enable nginx &>> $log_file
+systemctl enable nginx
 print_head start nginx
 systemctl start nginx
-systemctl restart nginx &>> $log_file
+systemctl restart nginx
