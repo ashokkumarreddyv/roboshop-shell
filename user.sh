@@ -26,3 +26,4 @@ print_head install npm
 npm install
 
 demon_setup
+echo $?
