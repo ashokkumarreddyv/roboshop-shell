@@ -1,4 +1,4 @@
-print_hear(){
+print_head(){
  echo -e "\e[34m$*\e[0m"
 
 }
