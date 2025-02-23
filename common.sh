@@ -21,9 +21,18 @@ nodejs_user() {
 
      print_head disable nodejs
     dnf module disable nodejs -y
-    echo $?
+    if [ $? -eq 0 ]; then
+      echo -e "\e[32m >>success\e[0m"
+    else
+      echo -e "\e[31m >>failure\e[0m"
+    fi
     dnf module enable nodejs:20 -y
-    echo $?
+    if [ $? -eq 0 ]; then
+          echo -e "\e[32m >>success\e[0m"
+    else
+          echo -e "\e[31m >>failure\e[0m"
+    fi
+
     dnf install nodejs -y
     echo $?
 
