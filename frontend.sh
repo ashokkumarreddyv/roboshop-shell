@@ -8,8 +8,6 @@ print_head() {
 
 source common.sh
 
-
-
 print_head disable nginx
 dnf module disable nginx -y
 exit_status $?
