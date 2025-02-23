@@ -9,18 +9,18 @@ source common.sh
 
 print_head disable nodejs
 dnf module disable nodejs -y
-echo $?
+exit_status $?
 
 print_head enable nodejs
 dnf module enable nodejs:20 -y
-echo $?
+exit_status $?
 
 print_head install nodejs
 dnf install nodejs -y
-echo $?
+exit_status $?
 cp user.service /etc/systemd/system/user.service
 useradd roboshop
-echo $?
+exit_status $?
 
 artifact_download
 
@@ -28,7 +28,7 @@ cd /app
 
 print_head install npm
 npm install
-echo $?
+exit_status $?
 
 demon_setup
-echo $?
+exit_status $?

@@ -4,7 +4,7 @@ demon_setup() {
 systemctl daemon-reload
 systemctl enable $component
 systemctl restart $component
-echo $?
+exit_status $?
 
 }
 
@@ -21,25 +21,30 @@ nodejs_user() {
 
      print_head disable nodejs
     dnf module disable nodejs -y
-    if [ $? -eq 0 ]; then
-      echo -e "\e[32m >>success\e[0m"
-    else
-      echo -e "\e[31m >>failure\e[0m"
-    fi
-    dnf module enable nodejs:20 -y
-    if [ $? -eq 0 ]; then
-          echo -e "\e[32m >>success\e[0m"
-    else
-          echo -e "\e[31m >>failure\e[0m"
-    fi
+    exit_status $?
 
     dnf install nodejs -y
-    echo $?
+    exit_status $?
 
     cp catalogue.service /etc/systemd/system/catalogue.service
     cp mongo.repo /etc/yum.repos.d/mongo.repo
 
     useradd roboshop
-    echo $?
+    exit_status $?
+
+}
+
+exit_status() {
+
+     echo -e "\e[31m >>failure\e[0m"
+       fi
+       dnf module enable nodejs:20 -y
+       if [ $1 -eq 0 ]; then
+             echo -e "\e[32m >>success\e[0m"
+       else
+             echo -e "\e[31m >>failure\e[0m"
+       fi
+
+
 
 }
