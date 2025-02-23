@@ -14,3 +14,4 @@ npm install
 demon_setup
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 mongosh --host localhost </app/db/master-data.js
+
