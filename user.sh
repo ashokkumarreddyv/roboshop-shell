@@ -1,3 +1,9 @@
+print_hear(){
+ echo -e "\e[34m$*\e[0m"
+
+}
+
+
 component=user
 source common.sh
 
