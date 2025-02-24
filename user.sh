@@ -19,7 +19,13 @@ print_head install nodejs
 dnf install nodejs -y
 exit_status $?
 cp user.service /etc/systemd/system/user.service
-useradd roboshop
+print_head application user
+rm roboshop
+id roboshop
+if [ $? - ne 0]; then
+  useradd roboshop
+fi
+
 exit_status $?
 
 artifact_download
