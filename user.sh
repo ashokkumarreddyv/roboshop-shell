@@ -25,6 +25,7 @@ id roboshop
 if [ $? -ne 0 ]; then
   useradd roboshop
 
+fi
 
 exit_status $?
 
