@@ -20,7 +20,7 @@ dnf install nodejs -y
 exit_status $?
 cp user.service /etc/systemd/system/user.service
 print_head application user
-userdel roboshop
+
 id roboshop
 if [ $? - ne 0]; then
   useradd roboshop
