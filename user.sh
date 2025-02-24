@@ -22,7 +22,7 @@ cp user.service /etc/systemd/system/user.service
 print_head application user
 
 id roboshop
-if [ $? -eq 0 ]; then
+if [ $? -ne 0 ]; then
   useradd roboshop
 
 fi
