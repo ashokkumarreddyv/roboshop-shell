@@ -21,9 +21,9 @@ exit_status $?
 cp user.service /etc/systemd/system/user.service
 print_head application user
 
-  id roboshop
-  if [ $? -ne 0 ]; then
-    useradd roboshop
+id roboshop
+if [ $? -ne 0 ]; then
+  useradd roboshop
 
 
 exit_status $?
@@ -38,3 +38,4 @@ exit_status $?
 
 demon_setup
 exit_status $?
+
