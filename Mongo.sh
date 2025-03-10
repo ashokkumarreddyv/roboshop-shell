@@ -6,3 +6,6 @@ systemctl enable mongod
 systemctl start mongod
 systemctl restart mongod
 
+# ashok
+b;
+''
